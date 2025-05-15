@@ -14,4 +14,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 <!DOCTYPE html>
-CREATE FORM HERE
+<!-- CREATE FORM HERE -->
+
+<form action="" method="post">
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount" name="amount" required>
+    <button type="submit">Deposit</button>
+</form>
+    <a href="index.php">Back to Home</a>
