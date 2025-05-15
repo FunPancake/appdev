@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 $error = '';
@@ -14,4 +13,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 <!DOCTYPE html>
-CREATE FORM HERE
+<!-- CREATE FORM HERE -->
+<form action="" method="POST">
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount">
+        <button type="submit">Withdraw</button>
+    </form>
+    <a href="index.php">Back to Home</a>
