@@ -1,0 +1,18 @@
+Scenario
+    Design a BEAUTIFUL PHP application for a banking system that allows users to check their balance, 
+	deposit money, and withdraw money from their account. The application will not connect to a real 
+	database but will simulate these operations using session storage to persist data temporarily.
+
+Requirements
+
+    Home Page: Displays options to View Balance, Deposit Money, and Withdraw Money.
+    View Balance: Shows the current balance.
+    Deposit Money: Allows the user to enter an amount to deposit into their account.
+    Withdraw Money: Allows the user to enter an amount to withdraw. If the balance is insufficient, 
+	display an error message.
+
+Files and Their Roles
+    index.php - The homepage with navigation links.
+    balance.php - Displays the current balance.
+    deposit.php - Handles user input for deposits and updates the balance.
+    withdraw.php - Handles withdrawal requests and updates the balance after checking for sufficient funds.
