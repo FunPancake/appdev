@@ -8,18 +8,18 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #ecf0f1;
+            background-color: lightgray;
         }
 
         header {
-            background-color: #2c3e50;
+            background-color: darkslategray;
             color: white;
             padding: 20px;
             text-align: center;
         }
 
         nav {
-            background-color: #34495e;
+            background-color: dimgray;
             padding: 10px;
         }
 
@@ -43,20 +43,23 @@
 
         main {
             padding: 20px;
-            background-color: #ffffff;
+            background-color: white;
         }
 
         section {
             margin-bottom: 20px;
             padding: 15px;
-            background-color: #ecf0f1;
-            border-left: 5px solid #3498db;
+            background-color: lightgray;
+            border-left: 5px solid blue;
         }
 
         p {
             font-size: 16px;
-            color: #333;
+            color: black;
             line-height: 1.6;
+            background-color: whitesmoke;
+            padding: 10px;
+            border-left: 4px solid steelblue;
         }
 
         .form-container {
@@ -77,25 +80,25 @@
             padding: 8px;
             width: 100%;
             font-size: 16px;
-            border: 1px solid #ccc;
+            border: 1px solid gray;
             border-radius: 4px;
         }
 
         button {
-            background-color: #3498db;
+            background-color: blue;
             color: white;
             border: none;
             cursor: pointer;
         }
 
         button:hover {
-            background-color: #2980b9;
+            background-color: darkblue;
         }
 
         .extra-button {
             padding: 10px 20px;
             font-size: 16px;
-            background-color: #27ae60;
+            background-color: green;
             color: white;
             border: none;
             cursor: pointer;
@@ -104,7 +107,7 @@
         }
 
         .extra-button:hover {
-            background-color: #219150;
+            background-color: darkgreen;
         }
 
         table {
@@ -114,18 +117,18 @@
         }
 
         th, td {
-            border: 1px solid #ccc;
+            border: 1px solid gray;
             padding: 10px;
             text-align: left;
         }
 
         th {
-            background-color: #2980b9;
+            background-color: navy;
             color: white;
         }
 
         footer {
-            background-color: #bdc3c7;
+            background-color: silver;
             text-align: center;
             padding: 15px;
             margin-top: 20px;
