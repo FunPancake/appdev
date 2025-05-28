@@ -17,6 +17,14 @@
             padding: 20px;
             text-align: center;
         }
+        
+        h1 {
+            font-size: 36px;
+            color: darkred;
+            text-align: center;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
 
         nav {
             background-color: dimgray;
