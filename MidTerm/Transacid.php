@@ -1,52 +1,57 @@
 <?php
-$firstname = "Ian Lindley";
-$lastname = "Del Rosario";
+// Get inputs from POST
+$firstname = $_POST['firstname'] ?? '';
+$lastname = $_POST['lastname'] ?? '';
+$roomType = $_POST['roomType'] ?? '1';
+$inputDate = $_POST['resdate'] ?? date("Y-m-d"); // fallback to today if not set
 
-// Combine into one full name
+// Combine full name
 $name = $firstname . " " . $lastname;
 
-// Get the first 2 letters of the full name
+// Get first 2 letters of the name
 $initial = strtoupper(substr($name, 0, 2));
 
-echo "Full name: $name<br>";
-echo "First 2 letters: $initial . <br>";
+// Format reservation date into custom format (e.g., JUN050625)
+$dateObj = DateTime::createFromFormat('Y-m-d', $inputDate);
+$resdate = strtoupper($dateObj->format("M")) . $dateObj->format("dmy");
 
-echo date("m-d-y") . "<br>";
-
-//resesvation date
-$resdate = strtoupper(substr(date("M"), 0, 3)) . date("d") . date("m"). date("y");
-
-// Input for room type
-$roomType = "1"; // Can be changed
-
-// Set room code instead of echoing directly
+// Determine room code and description
 $roomCode = "";
-switch ($roomType){
+$roomDesc = "";
+
+switch ($roomType) {
     case "1":
-        $roomCode = "SIN"; break;
+        $roomCode = "SIN";
+        $roomDesc = "Single";
+        break;
     case "2":
-        $roomCode = "DBL"; break;
+        $roomCode = "DBL";
+        $roomDesc = "Double";
+        break;
     case "3":
-        $roomCode = "TWN"; break;
+        $roomCode = "TWN";
+        $roomDesc = "Twin";
+        break;
     case "4":
-        $roomCode = "SUI"; break;
+        $roomCode = "SUI";
+        $roomDesc = "Suite";
+        break;
     default:
-        $roomCode = "UNK"; break;
+        $roomCode = "UNK";
+        $roomDesc = "Unknown";
+        break;
 }
 
-//Reservation count
-$resCount = sprintf("%05d", 1);
+// Format reservation count
+$resCount = sprintf("%05d", 1); // Static now — can be dynamic later
 
-echo "<br>";
+// Final transaction ID
+$transactionID = $initial . $resdate . "-" . $roomCode . $resCount;
 
-// Transcation ID
-echo $initial . $resdate . "-" . $roomCode . $resCount . "<br>";
-
-
-// INPUTS
-// - $firstname
-// - $lastname
-// - $roomType (1 for single, 2 for double, 3 for twin, 4 for suite)
-// - $resdate
-// - $roomCode
+// Output
+echo "Full name: $name<br>";
+echo "Initials: $initial<br>";
+echo "Reservation Date: " . $dateObj->format("m-d-y") . "<br>";
+echo "Room Code: $roomCode ($roomDesc)<br>";
+echo "<strong>Transaction ID:</strong> $transactionID";
 ?>
