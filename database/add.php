@@ -8,7 +8,7 @@
         $content = $_POST['content'];
 
         //inster the article into the database
-        $query = "insert into articles (title, content) values ('$title', '$content')";
+        $query = "INSERT INTO articles (title, content) VALUES ('$title', '$content')";
 
         mysqli_query($conn, $query);
 
