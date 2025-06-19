@@ -2,7 +2,7 @@
     include 'config.php';
 
     //Fetch all articles from the database
-    $query = "SELECT * from articles";
+    $query = "SELECT * FROM articles";
     $result = mysqli_query($conn, $query);
 
     //Display the articles
