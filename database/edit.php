@@ -1,5 +1,5 @@
 <?php 
-    include 'config.php';
+    include "config.php";
 
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
         //Get Articles
@@ -8,7 +8,7 @@
         $content = $_POST['content'];
 
         //UPDATE the article into the database
-        $query = "UPDATE articles set title='$title'. content='$content' where id='$id'";
+        $query = "UPDATE articles SET title='$title', content='$content' WHERE id='$id'";
 
         mysqli_query($conn, $query);
 
@@ -20,7 +20,7 @@
     $id = $_GET['id'];
 
     //Fetch the article from database
-    $query = "SELECT * from articles where id=$id";
+    $query = "SELECT * FROM articles WHERE id=$id";
     $result = mysqli_query($conn, $query);
     $article = mysqli_fetch_assoc($result);
 ?>
