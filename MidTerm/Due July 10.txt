@@ -12,8 +12,8 @@ will create new
 
 can create up to 3 accounts
 
-password:
-EyfTf8ZDoWKAK
+username
+if0_39385475
 
-username:
-if0_39381692
+password
+EyfTf8ZDoWKAK
