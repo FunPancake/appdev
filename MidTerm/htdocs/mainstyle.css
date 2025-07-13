@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+:root {
+  --gap: 15px;
+  --white: #FBFBFB;
+  --background: #45494E;
+
+  --color1: #FDA085;
+  --color1g: #F6D365;
+  --color2: #BFF098;
+  --color2g: #6FD6FF;
+  --color3: #EA8D8D;
+  --color3g: #A890FE;
+  --color4: #D8B5FF;
+  --color4g: #1EAE98;
+  --color5: #C6EA8D;
+
+  --accent-color: var(--background);
+  --gradient-color: var(--white);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a:focus {
+  outline: none;
+  position: relative;
+}
+
+a:focus:after {
+  width: 50px;
+}
+
+a:after {
+  content: "";
+  background: var(--white);
+  position: absolute;
+  bottom: 5px;
+  left: var(--gap);
+  height: 3px;
+  width: 0;
+  transition: .5s;
+  transition-delay: .2s;
+}
+
+body {
+  background: var(--background);
+  font-family: "Varela Round", Nunito, Montserrat, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+  font-size: 18px;
+}
+
+/* Slideshow */
+body {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  animation: backgroundSlideshow 18s infinite;
+}
+
+@keyframes backgroundSlideshow {
+  0% { background-image: url('1st_image.jpg'); }
+  33.33% { background-image: url('2nd_image.jpg'); }
+  66.66% { background-image: url('3rd_image.jpg'); }
+  100% { background-image: url('1st_image.jpg'); }
+}
+
+.background-slideshow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+}
+
+/* Menu Styling */
+.menu {
+  margin: var(--gap);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 0;
+}
+
+.menu > ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.menu > ol > li {
+  background: #232426;
+  border-left: 5px solid var(--gradient-color);
+  margin-bottom: 1px;
+  position: relative;
+  transition: .5s;
+}
+
+.menu > ol > li:nth-child(1) {
+  --accent-color: var(--color1);
+  --gradient-color: var(--color1g);
+}
+.menu > ol > li:nth-child(2) {
+  --accent-color: var(--color2);
+  --gradient-color: var(--color2g);
+}
+.menu > ol > li:nth-child(3) {
+  --accent-color: var(--color3);
+  --gradient-color: var(--color3g);
+}
+.menu > ol > li:nth-child(4) {
+  --accent-color: var(--color4);
+  --gradient-color: var(--color4g);
+}
+.menu > ol > li:nth-child(5) {
+  --accent-color: var(--color5);
+  --gradient-color: var(--color5g);
+}
+
+.menu > ol > li > a {
+  color: var(--white);
+  display: block;
+  padding: var(--gap);
+  position: relative;
+  text-decoration: none;
+  z-index: 1;
+}
+
+/* Submenu Styling */
+.menu > ol > li > ul.sub-menu {
+  background: rgba(20, 20, 20, 0.7); /* darker translucent background */
+  border-left: 3px solid var(--gradient-color);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease;
+  border-radius: 8px;
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: 100%;
+  width: 180px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  backdrop-filter: blur(8px); /* increased blur */
+}
+
+.menu > ol > li:hover > ul.sub-menu {
+  max-height: 500px;
+}
+
+.menu > ol > li > ul.sub-menu > li {
+  font-size: 0.95em;
+  padding: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu > ol > li > ul.sub-menu > li:last-child {
+  border-bottom: none;
+}
+
+.menu > ol > li > ul.sub-menu > li > a {
+  color: var(--white);
+  text-decoration: none;
+  display: block;
+  padding: 10px 15px;
+  font-family: "Varela Round", sans-serif;
+  transition: background 0.3s ease, padding-left 0.3s ease;
+}
+
+.menu > ol > li > ul.sub-menu > li > a:hover {
+  background: var(--color2g);
+  color: black;
+  padding-left: 25px;
+}
+
+/* Menu Hover Effects */
+.menu > ol > li:after {
+  background: #232426;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: .5s;
+  max-width: 0;
+  overflow: hidden;
+}
+
+.menu > ol > li:hover:after {
+  background: linear-gradient(to left, var(--accent-color), var(--gradient-color));
+  max-width: 800px;
+}
+
+.menu > ol > li:hover {
+  z-index: 100;
+}
+
+/* Content */
+.content {
+  text-align: center;
+  color: var(--white);
+  margin-top: 10vh;
+  font-family: "Varela Round", sans-serif;
+}
+
+.content h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+  color: black;
+}
+
+.content p {
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+  color: black;
+}
+
+/* Button */
+.button-17 {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: var(--color1);
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  font-family: "Varela Round", sans-serif;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.button-17:hover {
+  background-color: var(--color1g);
+}
+
+/* Responsive */
+@media (min-width: 600px) {
+  .menu > ol {
+    display: block;
+    max-width: none;
+    text-align: center;
+  }
+
+  .menu > ol > li {
+    border-top: 5px solid var(--accent-color);
+    border-left: 0;
+    display: inline-block;
+    margin-left: -5px;
+    vertical-align: top;
+    width: 120px;
+  }
+
+  .menu > ol > li:hover > ul.sub-menu {
+    max-height: 750px;
+  }
+}
+
+@media (min-width: 775px) {
+  .menu > ol > li {
+    width: 150px;
+  }
+}
