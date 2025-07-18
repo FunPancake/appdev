@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+:root {
+  --gap: 15px;
+  --white: #FFFFFF;
+  --light: #FAFAFA;
+  --background: #1E1E2F;
+
+  --color1: #FDA085;
+  --color1g: #F6D365;
+  --color2: #BFF098;
+  --color2g: #6FD6FF;
+  --color3: #EA8D8D;
+  --color3g: #A890FE;
+  --color4: #D8B5FF;
+  --color4g: #1EAE98;
+  --color5: #C6EA8D;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3em;
+  color: var(--light);
+  margin-top: 40px;
+}
+
+h2, h3 {
+  text-align: center;
+  font-size: 2em;
+  color: var(--color2g);
+  margin: 30px 0;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  text-align: center;
+  margin: 15px auto;
+  color: black;
+}
+
+.menu {
+  background-color: var(--background);
+  display: flex;
+  justify-content: center;
+  font-family: "Varela Round", sans-serif;
+  padding: 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1000;
+  position: relative;
+}
+
+.menu ul.main-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.menu-item {
+  position: relative;
+}
+
+.menu a {
+  display: block;
+  padding: 14px 20px;
+  color: var(--white);
+  text-decoration: none;
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu a:hover {
+  background-color: var(--color2);
+  color: black;
+}
+
+.sub-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  padding: 0;
+  z-index: 1001;
+}
+
+.sub-menu li {
+  width: 100%;
+  list-style: none;
+}
+
+.sub-menu a {
+  padding: 12px 18px;
+  display: block;
+  font-size: 1em;
+  color: var(--white);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.3s ease, padding-left 0.3s ease;
+}
+
+.sub-menu a:hover {
+  background-color: var(--color2);
+  color: black;
+  padding-left: 28px;
+}
+
+.menu-item:hover .sub-menu {
+  display: block;
+}
+
+.button, button, input[type="submit"] {
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+  font-size: 1em;
+  font-family: "Varela Round", sans-serif;
+  color: black;
+}
+
+.button:hover, button:hover, input[type="submit"]:hover {
+  transform: scale(1.05);
+  background-color: var(--color2);
+  color: black;
+}
+
+.button-17 {
+  font-size: 1em;
+  background-color: var(--color1);
+  color: white;
+  text-decoration: none;
+  border: none;
+  font-family: "Varela Round", sans-serif;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-align: center;
+  display: inline-block;
+  margin: 10px;
+  position: relative;
+  z-index: 10;
+}
+
+.button-17:hover {
+  background-color: var(--color1g);
+  color: black;
+}
+
+form {
+  max-width: 500px;
+  width: 90%;
+  margin: 40px auto;
+  padding: 30px;
+  font-size: 1.1em;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  color: var(--white);
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: #ddd;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.content {
+  text-align: center;
+  color: var(--white);
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section-card {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 30px;
+  margin: 20px auto;
+  color: var(--light);
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 800px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.section-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+ul.theme-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+ul.theme-list li {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-left: 5px solid var(--color2);
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  color: var(--white);
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+ul.theme-list li:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+img.responsive-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  margin: 15px 0;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu ul.main-menu {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .menu a {
+    width: 100%;
+    text-align: left;
+  }
+
+  .menu .sub-menu {
+    position: static;
+    box-shadow: none;
+    backdrop-filter: none;
+    background: transparent;
+  }
+
+  .sub-menu a {
+    padding-left: 20px;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 30px auto;
+  flex-wrap: wrap;
+}
+
+.actions a.button-17 {
+  min-width: 150px;
+  text-align: center;
+  padding: 12px 24px;
+  font-size: 1em;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  margin-bottom: -30px;
+}
+
+.button-inline {
+  font-size: 1em;
+  background-color: var(--color1);
+  color: white;
+  text-decoration: none;
+  border: none;
+  font-family: "Varela Round", sans-serif;
+  padding: 12px 24px;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+}
+
+.button-inline:hover {
+  background-color: var(--color1g);
+  color: black;
+}
+
+.button-inline.danger {
+  background-color: #e74c3c;
+}
+
+.button-inline.danger:hover {
+  background-color: #ff6b6b;
+}
+
+/* Custom Dropdown Styling */
+select {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1em;
+  font-family: "Varela Round", sans-serif;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='white' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px;
+}
+
+select:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+option {
+  background-color: var(--background);
+  color: var(--white);
+}
